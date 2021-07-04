@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage>
     super.initState();
     widget.myCards = widget.myCards.reversed.toList();
     _animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 2));
+        AnimationController(vsync: this, duration: Duration(seconds: 3));
 
     createListItems();
     WidgetsBinding.instance!.addPostFrameCallback((_) {
@@ -91,13 +91,11 @@ class _MyHomePageState extends State<MyHomePage>
             sizeAnimation.value;
         widget.myCards[((widget.myCards.length - 1) - i)].textOpacity =
             sizeAnimation.value / math.pi;
-        print('normal one ${sizeAnimation.value / math.pi}');
       }
     }
     if (_animationController.value > (1 - (1 / widget.myCards.length))) {
       widget.myCards[0].isVisible = true;
       widget.myCards[0].textOpacity = 1;
-      print('last one ${sizeAnimation.value / math.pi}');
       widget.myCards[0].rotationX = sizeAnimation.value;
     }
     setState(() {});
@@ -107,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage>
   Widget build(BuildContext context) {
     print('is it right : ${widget.side.index == MenuSide.right.index}');
     return Scaffold(
-        backgroundColor: Colors.white.withOpacity(0.65),
+        backgroundColor: Colors.white.withOpacity(0.85),
         body: SafeArea(
           top: true,
           child: GestureDetector(
@@ -182,7 +180,7 @@ class _MyHomePageState extends State<MyHomePage>
                           //color: cell.color,
                           height: cell.height,
                           width: cell.width,
-                          child: Icon(Icons.extension)),
+                          child: cell.icon),
                     ),
                   ),
                   if (!(widget.side.index == MenuSide.right.index))

@@ -4,9 +4,9 @@ class Cell {
   double? rotationX = 0.0;
   double? topPosition = 0.0;
   double? textOpacity = 0.0;
-  double? height = 100.0;
+  double? height = 80.0;
   bool? isVisible = false;
-  double? width = 100.0;
+  double? width = 80.0;
   String? label;
   Color? color;
   Color? textColor;
