@@ -180,7 +180,12 @@ class _MyHomePageState extends State<MyHomePage>
                           //color: cell.color,
                           height: cell.height,
                           width: cell.width,
-                          child: cell.icon),
+                          child: Transform(
+                              alignment: Alignment.center,
+                              transform: (counter == 0)
+                                  ? Matrix4.rotationX(0)
+                                  : Matrix4.rotationX(math.pi),
+                              child: cell.icon)),
                     ),
                   ),
                   if (!(widget.side.index == MenuSide.right.index))

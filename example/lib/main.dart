@@ -75,7 +75,10 @@ class _ExampleState extends State<Example> {
               SizedBox(height: 14,),
               Align(
                   alignment: Alignment.topLeft,
-                  child: Text('Art pictures', style: TextStyle(fontSize: 27, color: Colors.black, fontWeight: FontWeight.bold),)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(18.0),
+                    child: Text('Art pictures', style: TextStyle(fontSize: 27, color: Colors.black, fontWeight: FontWeight.bold),),
+                  )),
               SizedBox(height: 14,),
               Container(
                 child: ListView.builder(
