@@ -1,0 +1,4 @@
+enum MenuSide {
+  left,
+  right,
+}
