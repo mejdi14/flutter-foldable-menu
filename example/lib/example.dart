@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_foldable_menu/enum/cell.dart';
 import 'package:flutter_foldable_menu/enum/enums.dart';
+import 'package:flutter_foldable_menu/flutter_foldable_menu.dart';
+
 
 void main() {
   runApp(MyApp());

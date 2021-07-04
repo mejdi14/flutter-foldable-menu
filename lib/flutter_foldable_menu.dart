@@ -1,6 +1,11 @@
 library flutter_foldable_menu;
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'dart:math' as math;
+import 'enum/cell.dart';
+import 'enum/enums.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({required this.myCards, this.side = MenuSide.right, this.textStyle, this.onCardSelect}) : super();
