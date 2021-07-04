@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_foldable_menu/enum/manu_slide.dart';
 import 'package:flutter_foldable_menu/flutter_foldable_menu.dart';
+import 'package:flutter_foldable_menu/model/cell.dart';
 
 
 void main() {

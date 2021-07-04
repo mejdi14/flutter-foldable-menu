@@ -8,11 +8,17 @@ import 'model/cell.dart';
 import 'enum/manu_slide.dart';
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({required this.myCards, this.side = MenuSide.right, this.textStyle, this.onCardSelect}) : super();
+  MyHomePage(
+      {required this.myCards,
+      this.side = MenuSide.right,
+      this.textStyle,
+      this.onCardSelect})
+      : super();
   List<Cell> myCards;
   MenuSide side;
   TextStyle? textStyle;
   Function(String label, int counter)? onCardSelect;
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -101,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage>
   Widget build(BuildContext context) {
     print('is it right : ${widget.side.index == MenuSide.right.index}');
     return Scaffold(
-        backgroundColor: Colors.white.withOpacity(0.85),
+        backgroundColor: Colors.white.withOpacity(0.65),
         body: SafeArea(
           top: true,
           child: GestureDetector(
@@ -145,13 +151,13 @@ class _MyHomePageState extends State<MyHomePage>
           behavior: HitTestBehavior.opaque,
           onTap: () {
             print('hello ${cell.label}');
-            widget.onCardSelect!(cell.label ?? '',  counter);
+            widget.onCardSelect!(cell.label ?? '', counter);
           },
           child: Container(
             width: ((cell.width ?? 70) + 110),
             child: Padding(
               padding:
-              EdgeInsets.only(bottom: counter > 0 ? (cell.width ?? 0) : 0),
+                  EdgeInsets.only(bottom: counter > 0 ? (cell.width ?? 0) : 0),
               child: Row(
                 crossAxisAlignment: widget.side.index == MenuSide.right.index
                     ? CrossAxisAlignment.end
@@ -172,8 +178,7 @@ class _MyHomePageState extends State<MyHomePage>
                       child: Container(
                           decoration: BoxDecoration(
                               border: Border.all(color: Colors.black),
-                              color: Colors.white
-                          ),
+                              color: Colors.white),
                           //color: cell.color,
                           height: cell.height,
                           width: cell.width,
@@ -220,7 +225,8 @@ class _MyHomePageState extends State<MyHomePage>
                             : Matrix4.rotationX(math.pi),
                         child: Text(
                           cell.label ?? '',
-                          style: widget.textStyle ?? TextStyle(color: Colors.white),
+                          style: widget.textStyle ??
+                              TextStyle(color: Colors.white),
                         ),
                       ),
                     )),
