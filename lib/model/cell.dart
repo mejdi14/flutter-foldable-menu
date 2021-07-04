@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Cell {
   double? rotationX = 0.0;
   double? topPosition = 0.0;
-  double? textOpcity = 0.0;
+  double? textOpacity = 0.0;
   double? height = 100.0;
   bool? isVisible = false;
   double? width = 100.0;
@@ -15,7 +15,7 @@ class Cell {
   Cell(
       {this.rotationX,
       this.topPosition,
-      this.textOpcity,
+      this.textOpacity,
       this.label,
       this.color,
       this.textColor,

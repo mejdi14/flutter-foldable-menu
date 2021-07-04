@@ -4,8 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'dart:math' as math;
-import 'enum/cell.dart';
-import 'enum/enums.dart';
+import 'model/cell.dart';
+import 'enum/manu_slide.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({required this.myCards, this.side = MenuSide.right, this.textStyle, this.onCardSelect}) : super();
@@ -69,8 +69,8 @@ class _MyHomePageState extends State<MyHomePage>
   void animationEngine() {
     if (_animationController.value <= (1 / widget.myCards.length)) {
       widget.myCards[widget.myCards.length - 1].isVisible = true;
-      //myCards[myCards.length - 1].textOpcity = sizeAnimation.value / math.pi;
-      widget.myCards[widget.myCards.length - 1].textOpcity = 1;
+      //myCards[myCards.length - 1].textOpacity = sizeAnimation.value / math.pi;
+      widget.myCards[widget.myCards.length - 1].textOpacity = 1;
       rotationX = sizeAnimation.value;
     }
     for (var i = 1; i < widget.myCards.length - 1; i++) {
@@ -83,14 +83,14 @@ class _MyHomePageState extends State<MyHomePage>
         widget.myCards[((widget.myCards.length - 2) - i)].isVisible = false;
         widget.myCards[((widget.myCards.length - 1) - i)].rotationX =
             sizeAnimation.value;
-        widget.myCards[((widget.myCards.length - 1) - i)].textOpcity =
+        widget.myCards[((widget.myCards.length - 1) - i)].textOpacity =
             sizeAnimation.value / math.pi;
         print('normal one ${sizeAnimation.value / math.pi}');
       }
     }
     if (_animationController.value > (1 - (1 / widget.myCards.length))) {
       widget.myCards[0].isVisible = true;
-      widget.myCards[0].textOpcity = 1;
+      widget.myCards[0].textOpacity = 1;
       print('last one ${sizeAnimation.value / math.pi}');
       widget.myCards[0].rotationX = sizeAnimation.value;
     }
@@ -211,7 +211,7 @@ class _MyHomePageState extends State<MyHomePage>
                   ..setEntry(3, 2, 0.001)
                   ..rotateX(cell.rotationX ?? 0),
                 child: Opacity(
-                    opacity: cell.textOpcity ?? 0,
+                    opacity: cell.textOpacity ?? 0,
                     child: Center(
                       child: Transform(
                         alignment: Alignment.center,
