@@ -4,7 +4,6 @@ import 'package:flutter_foldable_menu/enum/manu_slide.dart';
 import 'package:flutter_foldable_menu/flutter_foldable_menu.dart';
 import 'package:flutter_foldable_menu/model/cell.dart';
 
-
 void main() {
   runApp(MyApp());
 }
@@ -31,18 +30,30 @@ class Example extends StatefulWidget {
 }
 
 class _ExampleState extends State<Example> {
-  List<Cell> myCards = [
-    Cell(color: Colors.yellow, label: 'close', icon: Icon(Icons.close)),
-    Cell(color: Colors.orange, label: 'take photo' , icon: Icon(Icons.camera_alt)),
-    Cell(color: Colors.green, label: 'share', textColor: Colors.black, icon: Icon(Icons.share)),
-    Cell(color: Colors.purple, label: 'settings', icon: Icon(Icons.settings)),
-    Cell(color: Colors.blue, label: 'verification', icon: Icon(Icons.verified_user_rounded)),
-    Cell(color: Colors.red, label: 'profile', icon: Icon(Icons.person))
+  List<FoldableCell> myCards = [
+    FoldableCell(color: Colors.yellow, label: 'close', icon: Icon(Icons.close)),
+    FoldableCell(
+        color: Colors.orange,
+        label: 'take photo',
+        icon: Icon(Icons.camera_alt)),
+    FoldableCell(
+        color: Colors.green,
+        label: 'share',
+        textColor: Colors.black,
+        icon: Icon(Icons.share)),
+    FoldableCell(color: Colors.purple, label: 'settings', icon: Icon(Icons.settings)),
+    FoldableCell(
+        color: Colors.blue,
+        label: 'verification',
+        icon: Icon(Icons.verified_user_rounded)),
+    FoldableCell(color: Colors.red, label: 'profile', icon: Icon(Icons.person))
   ];
 
-  var listImages = [['assets/img/image1.jpg', 'assets/img/image2.jpg'],
+  var listImages = [
+    ['assets/img/image1.jpg', 'assets/img/image2.jpg'],
     ['assets/img/image3.jpg', 'assets/img/image4.jpg'],
-    ['assets/img/image5.jpg', 'assets/img/image6.jpg']];
+    ['assets/img/image5.jpg', 'assets/img/image6.jpg']
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -51,62 +62,89 @@ class _ExampleState extends State<Example> {
         top: true,
         child: SingleChildScrollView(
           child: Column(
-
             children: [
               Align(
                 alignment: Alignment.topRight,
                 child: GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(PageRouteBuilder(
-                        opaque: false,
-                        pageBuilder: (BuildContext context, _, __) => MyHomePage(
-                          myCards: myCards,
-                          side: MenuSide.right,
-                          textStyle: TextStyle(color: Colors.black, fontSize: 22, fontWeight: FontWeight.bold),
-                          onCardSelect: (cell, counter){
-                          },
-                        )));
-                  },
+                    onTap: () {
+                      Navigator.of(context).push(PageRouteBuilder(
+                          opaque: false,
+                          pageBuilder: (BuildContext context, _, __) =>
+                              MyHomePage(
+                                myCards: myCards,
+                                side: MenuSide.right,
+                                textStyle: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold),
+                                onCardSelect: (cell, counter) {},
+                              )));
+                    },
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Image.asset('assets/img/menu.png', height: 30, width: 30,),
+                      child: Image.asset(
+                        'assets/img/menu.png',
+                        height: 30,
+                        width: 30,
+                      ),
                     )),
               ),
-              SizedBox(height: 14,),
+              SizedBox(
+                height: 14,
+              ),
               Align(
                   alignment: Alignment.topLeft,
                   child: Padding(
                     padding: const EdgeInsets.all(18.0),
-                    child: Text('Art pictures', style: TextStyle(fontSize: 27, color: Colors.black, fontWeight: FontWeight.bold),),
+                    child: Text(
+                      'Art pictures',
+                      style: TextStyle(
+                          fontSize: 27,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold),
+                    ),
                   )),
-              SizedBox(height: 14,),
+              SizedBox(
+                height: 14,
+              ),
               Container(
                 child: ListView.builder(
                     shrinkWrap: true,
                     itemCount: listImages.length,
-                    itemBuilder: (context, index){
-                  return Container(
-                  width: double.infinity,
-                    child: Row(
-                      children: [
-                        Expanded(
-                          flex: 1,
-                          child: Container(
-                              padding: EdgeInsets.all(8),
-                              decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(15))),
-                              child: Image.asset(listImages[index][0], height: 200, fit: BoxFit.cover,)),
+                    itemBuilder: (context, index) {
+                      return Container(
+                        width: double.infinity,
+                        child: Row(
+                          children: [
+                            Expanded(
+                              flex: 1,
+                              child: Container(
+                                  padding: EdgeInsets.all(8),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(15))),
+                                  child: Image.asset(
+                                    listImages[index][0],
+                                    height: 200,
+                                    fit: BoxFit.cover,
+                                  )),
+                            ),
+                            Expanded(
+                              flex: 1,
+                              child: Container(
+                                  padding: EdgeInsets.all(8),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(15)),
+                                  child: Image.asset(
+                                    listImages[index][1],
+                                    height: 200,
+                                    fit: BoxFit.cover,
+                                  )),
+                            )
+                          ],
                         ),
-                        Expanded(
-                          flex: 1,
-                          child: Container(
-                              padding: EdgeInsets.all(8),
-                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
-                              child: Image.asset(listImages[index][1], height: 200, fit: BoxFit.cover,)),
-                        )
-                      ],
-                    ),
-                  );
-                }),
+                      );
+                    }),
               ),
             ],
           ),

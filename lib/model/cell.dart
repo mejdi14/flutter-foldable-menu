@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Cell {
+class FoldableCell {
   double? rotationX = 0.0;
   double? topPosition = 0.0;
   double? textOpacity = 0.0;
@@ -12,7 +12,7 @@ class Cell {
   Color? textColor;
   Icon? icon;
 
-  Cell(
+  FoldableCell(
       {this.rotationX,
       this.topPosition,
       this.textOpacity,

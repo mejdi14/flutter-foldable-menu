@@ -14,7 +14,7 @@ class MyHomePage extends StatefulWidget {
       this.textStyle,
       this.onCardSelect})
       : super();
-  List<Cell> myCards;
+  List<FoldableCell> myCards;
   MenuSide side;
   TextStyle? textStyle;
   Function(String label, int counter)? onCardSelect;
@@ -103,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage>
 
   @override
   Widget build(BuildContext context) {
-    print('is it right : ${widget.side.index == MenuSide.right.index}');
+    print('is it right : ${isItOnTheRightSide()}');
     return Scaffold(
         backgroundColor: Colors.white.withOpacity(0.85),
         body: SafeArea(
@@ -157,14 +157,14 @@ class _MyHomePageState extends State<MyHomePage>
               padding:
                   EdgeInsets.only(bottom: counter > 0 ? (cell.width ?? 0) : 0),
               child: Row(
-                crossAxisAlignment: widget.side.index == MenuSide.right.index
+                crossAxisAlignment: isItOnTheRightSide()
                     ? CrossAxisAlignment.end
                     : CrossAxisAlignment.start,
-                mainAxisAlignment: widget.side.index == MenuSide.right.index
+                mainAxisAlignment: isItOnTheRightSide()
                     ? MainAxisAlignment.end
                     : MainAxisAlignment.start,
                 children: [
-                  if (widget.side.index == MenuSide.right.index)
+                  if (isItOnTheRightSide())
                     ...labelGenerator(cell, counter, true),
                   Visibility(
                     visible: cell.isVisible ?? false,
@@ -188,7 +188,7 @@ class _MyHomePageState extends State<MyHomePage>
                               child: cell.icon)),
                     ),
                   ),
-                  if (!(widget.side.index == MenuSide.right.index))
+                  if (!(isItOnTheRightSide()))
                     ...labelGenerator(cell, counter, false),
                 ],
               ),
@@ -202,7 +202,9 @@ class _MyHomePageState extends State<MyHomePage>
     return cardsList;
   }
 
-  List<Widget> labelGenerator(Cell cell, int counter, bool isRight) {
+  bool isItOnTheRightSide() => widget.side.index == MenuSide.right.index;
+
+  List<Widget> labelGenerator(FoldableCell cell, int counter, bool isRight) {
     return [
       if (!isRight)
         SizedBox(
@@ -226,10 +228,13 @@ class _MyHomePageState extends State<MyHomePage>
                         transform: (counter == 0)
                             ? Matrix4.rotationX(0)
                             : Matrix4.rotationX(math.pi),
-                        child: Text(
-                          cell.label ?? '',
-                          style: widget.textStyle ??
-                              TextStyle(color: Colors.white),
+                        child: Align(
+                          alignment: isItOnTheRightSide() ? Alignment.centerRight : Alignment.centerLeft,
+                          child: Text(
+                            cell.label ?? '',
+                            style: widget.textStyle ??
+                                TextStyle(color: Colors.white),
+                          ),
                         ),
                       ),
                     )),
