@@ -21,9 +21,4 @@ class FoldableCell {
       this.textColor,
       this.icon,
       this.isVisible});
-
-  @override
-  String toString() {
-    return 'Cell{rotationX: $rotationX, topPosition: $topPosition, height: $height, isVisible: $isVisible, width: $width, label: $label, color: $color, icon: $icon}';
-  }
 }

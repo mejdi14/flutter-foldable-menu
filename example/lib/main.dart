@@ -67,18 +67,20 @@ class _ExampleState extends State<Example> {
                 alignment: Alignment.topRight,
                 child: GestureDetector(
                     onTap: () {
-                      Navigator.of(context).push(PageRouteBuilder(
-                          opaque: false,
-                          pageBuilder: (BuildContext context, _, __) =>
-                              MyHomePage(
-                                myCards: myCards,
-                                side: MenuSide.right,
-                                textStyle: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold),
-                                onCardSelect: (cell, counter) {},
-                              )));
+                        Navigator.of(context).push(PageRouteBuilder(
+                            opaque: false,
+                            pageBuilder: (BuildContext context, _, __) =>
+                                FoldableMenu(
+                                  myCards: myCards,
+                                  side: MenuSide.right,
+                                  textStyle: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                  onCardSelect: (cell, counter) {
+                                    print('this is :$counter');
+                                  },
+                                )));
                     },
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),

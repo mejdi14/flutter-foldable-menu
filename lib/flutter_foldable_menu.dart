@@ -7,23 +7,27 @@ import 'dart:math' as math;
 import 'model/cell.dart';
 import 'enum/manu_slide.dart';
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage(
+class FoldableMenu extends StatefulWidget {
+  FoldableMenu(
       {required this.myCards,
       this.side = MenuSide.right,
       this.textStyle,
+      this.duration,
+      this.backgroundOpacity,
       this.onCardSelect})
       : super();
   List<FoldableCell> myCards;
   MenuSide side;
   TextStyle? textStyle;
+  double? backgroundOpacity;
+  Duration? duration;
   Function(String label, int counter)? onCardSelect;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _FoldableMenuState createState() => _FoldableMenuState();
 }
 
-class _MyHomePageState extends State<MyHomePage>
+class _FoldableMenuState extends State<FoldableMenu>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   bool isClicked = false;
@@ -38,18 +42,14 @@ class _MyHomePageState extends State<MyHomePage>
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     widget.myCards = widget.myCards.reversed.toList();
-    _animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 3));
+    _animationController = AnimationController(
+        vsync: this, duration: widget.duration ?? Duration(seconds: 3));
 
     createListItems();
     WidgetsBinding.instance!.addPostFrameCallback((_) {
       afterBuild();
-    });
-    SchedulerBinding.instance!.addPostFrameCallback((_) {
-      print("SchedulerBinding");
     });
     sizeAnimation = TweenSequence(
       [
@@ -62,7 +62,6 @@ class _MyHomePageState extends State<MyHomePage>
     ).animate(_animationController)
       ..addListener(() {
         animationEngine();
-        print('this is sized animation: $rotationX');
       })
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
@@ -75,7 +74,6 @@ class _MyHomePageState extends State<MyHomePage>
   void animationEngine() {
     if (_animationController.value <= (1 / widget.myCards.length)) {
       widget.myCards[widget.myCards.length - 1].isVisible = true;
-      //myCards[myCards.length - 1].textOpacity = sizeAnimation.value / math.pi;
       widget.myCards[widget.myCards.length - 1].textOpacity = 1;
       rotationX = sizeAnimation.value;
     }
@@ -103,9 +101,9 @@ class _MyHomePageState extends State<MyHomePage>
 
   @override
   Widget build(BuildContext context) {
-    print('is it right : ${isItOnTheRightSide()}');
     return Scaffold(
-        backgroundColor: Colors.white.withOpacity(0.85),
+        backgroundColor:
+            Colors.white.withOpacity(widget.backgroundOpacity ?? 0.85),
         body: SafeArea(
           top: true,
           child: GestureDetector(
@@ -148,11 +146,10 @@ class _MyHomePageState extends State<MyHomePage>
         child: GestureDetector(
           behavior: HitTestBehavior.opaque,
           onTap: () {
-            print('hello ${cell.label}');
             widget.onCardSelect!(cell.label ?? '', counter);
           },
           child: Container(
-            width: ((cell.width ?? 70) + 110),
+            width: ((cell.width ?? 70) + 210),
             child: Padding(
               padding:
                   EdgeInsets.only(bottom: counter > 0 ? (cell.width ?? 0) : 0),
@@ -211,7 +208,7 @@ class _MyHomePageState extends State<MyHomePage>
           width: 10,
         ),
       Container(
-          width: 100,
+          width: 200,
           height: cell.height ?? 70,
           child: Visibility(
               visible: cell.isVisible ?? false,
@@ -229,7 +226,9 @@ class _MyHomePageState extends State<MyHomePage>
                             ? Matrix4.rotationX(0)
                             : Matrix4.rotationX(math.pi),
                         child: Align(
-                          alignment: isItOnTheRightSide() ? Alignment.centerRight : Alignment.centerLeft,
+                          alignment: isItOnTheRightSide()
+                              ? Alignment.centerRight
+                              : Alignment.centerLeft,
                           child: Text(
                             cell.label ?? '',
                             style: widget.textStyle ??
