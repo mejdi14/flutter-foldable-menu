@@ -1,7 +1,7 @@
 name: flutter_foldable_menu
-description: A new Flutter package project.
-version: 0.0.1
-homepage:
+description: A flutter package for animated menu
+version: 1.0.0
+homepage: https://github.com/mejdi14/flutter-foldable
 
 environment:
   sdk: ">=2.12.0 <3.0.0"

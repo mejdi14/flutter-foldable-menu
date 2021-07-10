@@ -50,9 +50,9 @@ class _ExampleState extends State<Example> {
   ];
 
   var listImages = [
-    ['assets/img/image1.jpg', 'assets/img/image2.jpg'],
-    ['assets/img/image3.jpg', 'assets/img/image4.jpg'],
-    ['assets/img/image5.jpg', 'assets/img/image6.jpg']
+    ['assets/img/image1.jpeg', 'assets/img/image2.jpeg'],
+    ['assets/img/image3.jpeg', 'assets/img/image4.jpeg'],
+    ['assets/img/image5.jpeg', 'assets/img/image6.jpeg']
   ];
 
   @override
@@ -118,7 +118,7 @@ class _ExampleState extends State<Example> {
                         width: double.infinity,
                         child: Row(
                           children: [
-                            Expanded(
+                             Expanded(
                               flex: 1,
                               child: Container(
                                   padding: EdgeInsets.all(8),
