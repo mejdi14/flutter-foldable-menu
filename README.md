@@ -16,7 +16,7 @@
 	</p>
 	
 ## :art:Credits
-- Many thanks to : [@Marta Skowron](https://dribbble.com/skowrony) for the amazing design
+- Many thanks to : [@Thomélie ISTACE](https://dribbble.com/shots/3971202-Info-navigation) for the amazing design
 
 ## ✨ Demo
 <p align="center">
