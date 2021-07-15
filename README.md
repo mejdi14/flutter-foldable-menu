@@ -12,11 +12,11 @@
 </p>
 
 <p align="center">
-<img src="https://github.com/mejdi14/BooksSwipe/blob/master/images/foldable_menu.png" height="300" width="300" >
+<img src="https://github.com/mejdi14/flutter-foldable-menu/blob/master/images/foldable_menu.png" height="300" width="300" >
 	</p>
 	
 ## :art:Credits
-- Many thanks to : [@Marta Skowron](https://dribbble.com/skowrony) for the amazing design
+- Many thanks to : [@Thomélie ISTACE](https://dribbble.com/shots/3971202-Info-navigation) for the amazing design
 
 ## ✨ Demo
 <p align="center">
