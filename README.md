@@ -20,7 +20,7 @@
 
 ## ✨ Demo
 <p align="center">
-<img src="https://github.com/mejdi14/flutter-foldable-menu/blob/master/images/example.gif" height="400" width="750" >
+<img src="https://github.com/mejdi14/flutter-foldable-menu/blob/master/images/example.gif" height="600" width="350" >
 	</p>
 	
 	
