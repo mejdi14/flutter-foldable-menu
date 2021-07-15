@@ -1,6 +1,7 @@
 library flutter_foldable_menu;
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'dart:math' as math;
@@ -16,7 +17,7 @@ class FoldableMenu extends StatefulWidget {
       this.backgroundOpacity,
       this.onCardSelect})
       : super();
-  List<FoldableCell> myCards;
+  var myCards;
   MenuSide side;
   TextStyle? textStyle;
   double? backgroundOpacity;
@@ -45,7 +46,7 @@ class _FoldableMenuState extends State<FoldableMenu>
     super.initState();
     widget.myCards = widget.myCards.reversed.toList();
     _animationController = AnimationController(
-        vsync: this, duration: widget.duration ?? Duration(seconds: 3));
+        vsync: this, duration: widget.duration ?? Duration(seconds: 2));
 
     createListItems();
     WidgetsBinding.instance!.addPostFrameCallback((_) {
