@@ -1,3 +1,3 @@
-## 1.0.0
+## 1.0.2
 
-* this is the first package release.
+* provide a code example on how to use the package.
