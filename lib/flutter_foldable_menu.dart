@@ -1,9 +1,7 @@
 library flutter_foldable_menu;
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'dart:math' as math;
 import 'model/cell.dart';
 import 'enum/manu_slide.dart';

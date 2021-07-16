@@ -24,12 +24,40 @@
 	</p>
 	
 	
-## Technologies
-- kotlin
-- ViewPager2
-- Git Flow (with GitKraken)
-- ArgbEvaluator
-- Github Actions
+## How to use
+List<FoldableCell> myCards = [
+    FoldableCell(color: Colors.yellow, label: 'close', icon: Icon(Icons.close)),
+    FoldableCell(
+        color: Colors.orange,
+        label: 'take photo',
+        icon: Icon(Icons.camera_alt)),
+    FoldableCell(
+        color: Colors.green,
+        label: 'share',
+        textColor: Colors.black,
+        icon: Icon(Icons.share)),
+    FoldableCell(color: Colors.purple, label: 'settings', icon: Icon(Icons.settings)),
+    FoldableCell(
+        color: Colors.blue,
+        label: 'verification',
+        icon: Icon(Icons.verified_user_rounded)),
+    FoldableCell(color: Colors.red, label: 'profile', icon: Icon(Icons.person))
+  ];
+  
+   Navigator.of(context).push(PageRouteBuilder(
+                              opaque: false,
+                              pageBuilder: (BuildContext context, _, __) =>
+                                  FoldableMenu(
+                                    myCards: myCards,
+                                    side: MenuSide.right,
+                                    textStyle: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold),
+                                    onCardSelect: (cell, counter) {
+                                      print('this is :$cell');
+                                    },
+                                  )));
 	
 ## 🤝 Contributing
 
