@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-<img src="https://github.com/mejdi14/flutter-foldable-menu/blob/master/images/foldable_menu.png" height="300" width="300" >
+<img src="https://drive.google.com/file/d/1lIFvwLEzFWxaLJ7Q1kT9ATGf24_Cf7c7/view?usp=sharing" height="300" width="300" >
 	</p>
 	
 ## :art:Credits
@@ -20,7 +20,7 @@
 
 ## ✨ Demo
 <p align="center">
-<img src="https://github.com/mejdi14/flutter-foldable-menu/blob/master/images/example.gif" height="600" width="450" >
+<img src="https://drive.google.com/file/d/14e0E5xjwn0A1KePXu5HK3VQOmFK-A9Oo/view?usp=sharing" height="600" width="450" >
 	</p>
 	
 	
