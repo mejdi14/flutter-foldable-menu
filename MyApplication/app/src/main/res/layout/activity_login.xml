@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~ 	StreamWIDE (Team on The Run)
+  ~
+  ~ @createdBy  AndroidTeam on jeu., 26 déc. 2019 10:30:49 +0100
+  ~ @copyright  Copyright (c) 2019 StreamWIDE UK Ltd (Team on the Run)
+  ~ @email      support@teamontherun.com
+  ~
+  ~ 	© Copyright 2019 StreamWIDE UK Ltd (Team on the Run). StreamWIDE is the copyright holder
+  ~ 	of all code contained in this file. Do not redistribute or
+  ~  	re-use without permission.
+  ~
+  ~ @lastModifiedOn lun., 23 déc. 2019 14:28:57 +0100
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.login.LoginActivity">
+
+    <TextView
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="Login" />
+
+
+    <LinearLayout
+        android:id="@+id/login_ll_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login"
+        android:orientation="vertical"
+        android:paddingTop="30dp"
+        android:gravity="center_horizontal">
+
+
+            <EditText
+                android:layout_height="40dp"
+                android:layout_width="300dp"
+                android:id="@+id/login_company_id"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="Company id"
+                />
+
+        <LinearLayout
+            android:id="@+id/phoneNumberInput"
+            android:layout_width="300dp"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+<!--        <Spinner-->
+<!--            android:id="@+id/flags_spinner"-->
+<!--            android:layout_width="90dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:spinnerMode="dialog"-->
+<!--            android:background="@color/colorAccent" />-->
+            <EditText
+                android:layout_height="40dp"
+                android:layout_width="300dp"
+                android:id="@+id/login_phone_number"
+                android:ems="10"
+                android:inputType="phone"
+                android:hint="Phone number" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:text="Login"
+
+            />
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_below="@+id/login"
+        android:id="@+id/activation_code_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:visibility="gone"
+        >
+        <EditText
+            android:layout_height="40dp"
+            android:layout_width="300dp"
+            android:id="@+id/activation_code"
+            android:ems="10"
+            android:hint="Activation code" />
+
+        <Button
+            android:id="@+id/activate_button"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:text="activate account"
+
+            />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/error_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </RelativeLayout>
+</RelativeLayout>

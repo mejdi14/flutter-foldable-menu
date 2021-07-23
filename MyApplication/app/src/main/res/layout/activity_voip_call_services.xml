@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~ 	StreamWIDE (Team on The Run)
+  ~
+  ~ @createdBy  AndroidTeam on lun., 6 janv. 2020 11:41:50 +0100
+  ~ @copyright  Copyright (c) 2020 StreamWIDE UK Ltd (Team on the Run)
+  ~ @email      support@teamontherun.com
+  ~
+  ~ 	© Copyright 2020 StreamWIDE UK Ltd (Team on the Run). StreamWIDE is the copyright holder
+  ~ 	of all code contained in this file. Do not redistribute or
+  ~  	re-use without permission.
+  ~
+  ~ @lastModifiedOn lun., 6 janv. 2020 11:41:49 +0100
+  -->
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.calls.VoipCallServicesActivity"
+    android:padding="30dp">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/live_call_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:backgroundTint="@drawable/btn_colored_background_tint"
+        android:layout_alignParentTop="true"
+        android:text="Live Call"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/call_out_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:backgroundTint="@drawable/btn_colored_background_tint"
+        android:layout_below="@id/live_call_button"
+        android:layout_marginTop="20dp"
+        android:text="Call Out"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/video_call_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:backgroundTint="@drawable/btn_colored_background_tint"
+        android:layout_below="@id/call_out_button"
+        android:layout_marginTop="20dp"
+        android:text="Video Call"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ptt_call_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:backgroundTint="@drawable/btn_colored_background_tint"
+        android:layout_below="@id/video_call_button"
+        android:layout_marginTop="20dp"
+        android:text="PTT Call"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/channel_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:backgroundTint="@drawable/btn_colored_background_tint"
+        android:layout_below="@id/ptt_call_button"
+        android:layout_marginTop="20dp"
+        android:text="Channel"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/streaming_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:backgroundTint="@drawable/btn_colored_background_tint"
+        android:layout_below="@id/channel_button"
+        android:layout_marginTop="20dp"
+        android:text="Streaming"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/streaming_to_dispatch_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:backgroundTint="@drawable/btn_colored_background_tint"
+        android:layout_below="@id/streaming_button"
+        android:layout_marginTop="20dp"
+        android:text="Streaming to dispatch"/>
+
+
+</RelativeLayout>

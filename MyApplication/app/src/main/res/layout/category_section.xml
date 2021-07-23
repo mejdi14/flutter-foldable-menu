@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~ 	StreamWIDE (Team on The Run)
+  ~
+  ~ @createdBy  AndroidTeam on ven., 10 avr. 2020 11:06:25 +0100
+  ~ @copyright  Copyright (c) 2020 StreamWIDE UK Ltd (Team on the Run)
+  ~ @email      support@teamontherun.com
+  ~
+  ~ 	© Copyright 2020 StreamWIDE UK Ltd (Team on the Run). StreamWIDE is the copyright holder
+  ~ 	of all code contained in this file. Do not redistribute or
+  ~  	re-use without permission.
+  ~
+  ~ @lastModifiedOn ven., 10 avr. 2020 11:06:17 +0100
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/category_section_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="test"
+        android:textColor="#fff"
+        android:background="@color/colorPrimaryDark"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/category_section_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/category_section_empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="Empty"
+        android:visibility="gone"/>
+
+</LinearLayout>

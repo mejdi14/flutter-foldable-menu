@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~ 	StreamWIDE (Team on The Run)
+  ~
+  ~ @createdBy  AndroidTeam on Mon, 30 Dec 2019 10:25:41 +0100
+  ~ @copyright  Copyright (c) 2019 StreamWIDE UK Ltd (Team on the Run)
+  ~ @email      support@teamontherun.com
+  ~
+  ~ 	© Copyright 2019 StreamWIDE UK Ltd (Team on the Run). StreamWIDE is the copyright holder
+  ~ 	of all code contained in this file. Do not redistribute or
+  ~  	re-use without permission.
+  ~
+  ~ @lastModifiedOn Mon, 30 Dec 2019 10:24:40 +0100
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#112250"
+            android:textSize="16sp"
+            android:text="Emergency Call"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#112250"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/demo_emergency_activity_btn_start_emergency_call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.Button.Colored"
+                app:backgroundTint="#00897b"
+                android:text="Start Call"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/demo_emergency_activity_btn_sop_emergency_call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.Button.Colored"
+                app:backgroundTint="#e53935"
+                android:text="Stop Call"/>
+            <TextView
+                android:id="@+id/demo_emergency_activity_emergency_call_feature_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="#00897b"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="test"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="#112250"
+            android:textSize="16sp"
+            android:text="Emergency Message"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#112250"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/demo_emergency_activity_btn_start_emergency_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:textColor="#00897b"
+                app:backgroundTint="#fff"
+                android:text="Start"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/demo_emergency_activity_btn_sop_emergency_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:textColor="#e53935"
+                app:backgroundTint="#fff"
+                android:text="Stop"/>
+
+            <TextView
+                android:id="@+id/demo_emergency_activity_message_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="#00897b"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="test"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/demo_emergency_activity_received_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginTop="20dp"
+            android:background="#e53935"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFF"
+                android:textSize="16sp"
+                android:text="Received Emergency"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FFF"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/demo_emergency_activity_btn_ask_received"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:layout_gravity="center"
+                    android:text="acknowledge Alert"
+                    android:textColor="#e53935"
+                    app:backgroundTint="#fff" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/demo_emergency_activity_btn_stop_received"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:layout_gravity="center"
+                    android:text="Stop Alert"
+                    android:textColor="#e53935"
+                    app:backgroundTint="#fff" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:layout_marginEnd="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Log"
+                    android:textColor="#112250"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#112250" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/demo_emergency_activity_btn_clear_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:textColor="#112250"
+                app:backgroundTint="#fff"
+                android:text="Clear"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/demo_emergency_activity_log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#112250"
+            android:textSize="14sp"
+            android:scrollbars = "vertical"
+            android:gravity="bottom"
+            android:text="> Start Emergency demo ........................"/>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#112250"/>
+
+</LinearLayout>

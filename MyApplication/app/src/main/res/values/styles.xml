@@ -1,0 +1,42 @@
+<!--
+  ~
+  ~ 	StreamWIDE (Team on The Run)
+  ~
+  ~ @createdBy  AndroidTeam on lun., 30 déc. 2019 18:24:59 +0100
+  ~ @copyright  Copyright (c) 2019 StreamWIDE UK Ltd (Team on the Run)
+  ~ @email      support@teamontherun.com
+  ~
+  ~ 	© Copyright 2019 StreamWIDE UK Ltd (Team on the Run). StreamWIDE is the copyright holder
+  ~ 	of all code contained in this file. Do not redistribute or
+  ~  	re-use without permission.
+  ~
+  ~ @lastModifiedOn jeu., 26 déc. 2019 15:45:47 +0100
+  -->
+
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <!-- Base application theme. -->
+    <style name="AppThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <declare-styleable name="BezelImageView">
+        <attr name="maskDrawable" format="reference" />
+    </declare-styleable>
+
+    <style name="Theme.SmartMS.Dialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+</resources>

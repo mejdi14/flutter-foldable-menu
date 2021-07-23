@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~ 	StreamWIDE (Team on The Run)
+  ~
+  ~ @createdBy  AndroidTeam on lun., 30 déc. 2019 10:29:13 +0100
+  ~ @copyright  Copyright (c) 2019 StreamWIDE UK Ltd (Team on the Run)
+  ~ @email      support@teamontherun.com
+  ~
+  ~ 	© Copyright 2019 StreamWIDE UK Ltd (Team on the Run). StreamWIDE is the copyright holder
+  ~ 	of all code contained in this file. Do not redistribute or
+  ~  	re-use without permission.
+  ~
+  ~ @lastModifiedOn lun., 30 déc. 2019 10:28:42 +0100
+  -->
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:layout_above="@+id/messageContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".demo.MessageListActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:layout_marginBottom="60dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <RelativeLayout
+        android:id="@+id/messageContainer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true">
+
+        <EditText
+            android:id="@+id/messageText"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_toLeftOf="@+id/pickImageButton" />
+
+        <Button
+            android:text="Image"
+            android:id="@+id/pickImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_toLeftOf="@+id/sendButton" />
+
+        <Button
+            android:text="OK"
+            android:id="@+id/sendButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

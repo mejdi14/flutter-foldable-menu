@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~ 	StreamWIDE (Team on The Run)
+  ~
+  ~ @createdBy  AndroidTeam on Fri, 10 Jan 2020 18:23:21 +0100
+  ~ @copyright  Copyright (c) 2020 StreamWIDE UK Ltd (Team on the Run)
+  ~ @email      support@teamontherun.com
+  ~
+  ~ 	© Copyright 2020 StreamWIDE UK Ltd (Team on the Run). StreamWIDE is the copyright holder
+  ~ 	of all code contained in this file. Do not redistribute or
+  ~  	re-use without permission.
+  ~
+  ~ @lastModifiedOn Fri, 10 Jan 2020 18:22:22 +0100
+  -->
+
+<resources>
+    <!-- string     Application API KEY (google console) -->
+    <string name="application_api_key">YOUR_KEY_HERE</string>
+
+    <!-- string     Browser API KEY (google console) -->
+    <string name="browser_api_key">YOUR_KEY_HERE</string>
+
+    <string name="config_server_url">Your config server URL</string>
+
+    <string name="host_name_url">Your host name URL</string>
+
+    <string name="keystore_alias">keystore alias</string>
+
+</resources>

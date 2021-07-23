@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~ 	StreamWIDE (Team on The Run)
+  ~
+  ~ @createdBy  AndroidTeam on ven., 27 déc. 2019 10:54:34 +0100
+  ~ @copyright  Copyright (c) 2019 StreamWIDE UK Ltd (Team on the Run)
+  ~ @email      support@teamontherun.com
+  ~
+  ~ 	© Copyright 2019 StreamWIDE UK Ltd (Team on the Run). StreamWIDE is the copyright holder
+  ~ 	of all code contained in this file. Do not redistribute or
+  ~  	re-use without permission.
+  ~
+  ~ @lastModifiedOn jeu., 26 déc. 2019 15:10:49 +0100
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#01000000"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:padding="5dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/activity_single_contact_picture"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#f1f1f1"
+                    android:scaleType="centerCrop" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/demo_contact_details_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:paddingBottom="10dp">
+
+                <!-- contact first name -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="First name"
+                        android:textColor="#112250" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:background="#f1f1f1" />
+
+                    <TextView
+                        android:id="@+id/demo_contact_details_first_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:ellipsize="end"
+                        android:gravity="start"
+                        android:maxLines="3" />
+                </LinearLayout>
+
+                <!-- contact last name -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="Last name"
+                        android:textColor="#112250" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:background="#f1f1f1" />
+
+                    <TextView
+                        android:id="@+id/demo_contact_details_last_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:ellipsize="end"
+                        android:gravity="start"
+                        android:maxLines="3" />
+                </LinearLayout>
+
+                <!-- contact Job title -->
+                <LinearLayout
+                    android:id="@+id/demo_contact_details_position_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="Position"
+                        android:textColor="#112250" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:background="#f1f1f1" />
+
+                    <TextView
+                        android:id="@+id/demo_contact_details_position"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:ellipsize="end"
+                        android:gravity="start"
+                        android:maxLines="3" />
+                </LinearLayout>
+
+                <!-- status -->
+                <LinearLayout
+                    android:id="@+id/demo_contact_details_status_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="Status"
+                        android:textColor="#112250" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:background="#f1f1f1" />
+
+                    <TextView
+                        android:id="@+id/demo_contact_details_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:ellipsize="end"
+                        android:gravity="start"
+                        android:maxLines="3" />
+                </LinearLayout>
+
+                <!-- Operational status -->
+                <LinearLayout
+                    android:id="@+id/demo_contact_details_operational_status_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="Operational Status"
+                        android:textColor="#112250" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:background="#f1f1f1" />
+
+                    <TextView
+                        android:id="@+id/demo_contact_details_operational_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:ellipsize="end"
+                        android:gravity="start"
+                        android:maxLines="3" />
+                </LinearLayout>
+
+                <!-- Icon per role -->
+                <LinearLayout
+                    android:id="@+id/demo_contact_details_role_icon_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="Icon per role"
+                        android:textColor="#112250" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:background="#f1f1f1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/demo_contact_details_role_icon_picture"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:paddingTop="0dp"
+                            android:paddingBottom="1dp"
+                            android:paddingStart="1dp"
+                            android:paddingEnd="1dp"
+                            android:background="#f1f1f1"
+                            android:scaleType="centerCrop" />
+
+                        <TextView
+                            android:id="@+id/demo_contact_details_role_icon_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:ellipsize="end"
+                            android:gravity="start"
+                            android:maxLines="3" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- phone number -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="Phone number"
+                        android:textColor="#112250" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:background="#f1f1f1" />
+
+                    <TextView
+                        android:id="@+id/demo_contact_details_phone_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp" />
+
+                </LinearLayout>
+
+                <!-- address -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="Email"
+                        android:textColor="#112250" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:background="#f1f1f1" />
+
+
+                    <TextView
+                        android:id="@+id/demo_contact_details_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="start" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/demo_contact_details_Groups"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#f1f1f1" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical"
+                    android:padding="5dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/demo_contact_details_menu_option_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        app:srcCompat="@drawable/ic_group_avatar" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@+id/demo_contact_details_menu_option_icon"
+                        android:ellipsize="end"
+                        android:gravity="start"
+                        android:maxLines="1"
+                        android:text="Groups"
+                        android:textIsSelectable="false" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#f1f1f1" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

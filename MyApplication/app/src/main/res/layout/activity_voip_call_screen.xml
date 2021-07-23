@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~ 	StreamWIDE (Team on The Run)
+  ~
+  ~ @createdBy  AndroidTeam on lun., 6 janv. 2020 11:41:23 +0100
+  ~ @copyright  Copyright (c) 2020 StreamWIDE UK Ltd (Team on the Run)
+  ~ @email      support@teamontherun.com
+  ~
+  ~ 	© Copyright 2020 StreamWIDE UK Ltd (Team on the Run). StreamWIDE is the copyright holder
+  ~ 	of all code contained in this file. Do not redistribute or
+  ~  	re-use without permission.
+  ~
+  ~ @lastModifiedOn lun., 6 janv. 2020 11:41:23 +0100
+  -->
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.calls.VoipCallScreenActivity" >
+
+    <RelativeLayout
+        android:id="@+id/voip_call_details_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="50dp">
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/voip_call_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="16sp"
+            android:layout_marginTop="15dp"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/voip_call_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textStyle="bold"
+            android:layout_below="@id/voip_call_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/voip_call_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Info"
+            android:layout_below="@id/voip_call_timer"
+            android:layout_centerHorizontal="true"
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"/>
+
+
+        <RelativeLayout
+            android:id="@+id/video_preview_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/voip_call_info"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <com.streamwide.smartms.lib.core.network.voip.STWSurfaceView
+                android:id="@+id/feedback_surface_view"
+                android:layout_width="100dp"
+                android:layout_height="150dp"
+                android:visibility="gone"
+                android:layout_alignParentStart="true"
+                android:layout_margin="10dp"/>
+
+
+            <com.streamwide.smartms.lib.core.network.voip.STWSurfaceView
+                android:id="@+id/remote_surface_view"
+                android:layout_width="100dp"
+                android:layout_height="150dp"
+                android:visibility="gone"
+                android:layout_toEndOf="@id/feedback_surface_view"
+                android:layout_margin="10dp"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/ptt_options_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_below="@id/video_preview_container"
+            android:visibility="gone">
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/poc_floor_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+
+                android:layout_marginTop="15dp"
+                android:paddingStart="10dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/request_floor_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:backgroundTint="@drawable/btn_colored_background_tint"
+                android:text="request"
+                android:layout_below="@id/poc_floor_status"
+                android:layout_marginTop="25dp"/>
+
+            <ProgressBar
+                android:id="@+id/granted_floor_progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/request_floor_button"
+                android:layout_marginTop="10dp"
+                android:visibility="invisible"
+                />
+
+        </RelativeLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/stop_voip_call_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:backgroundTint="@drawable/btn_colored_background_tint"
+            android:text="stop"
+            android:layout_below="@id/ptt_options_container"
+            android:layout_marginTop="25dp"/>
+
+
+    </RelativeLayout>
+
+</ScrollView>

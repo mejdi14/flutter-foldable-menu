@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~ 	StreamWIDE (Team on The Run)
+  ~
+  ~ @createdBy  AndroidTeam on lun., 30 déc. 2019 18:24:59 +0100
+  ~ @copyright  Copyright (c) 2019 StreamWIDE UK Ltd (Team on the Run)
+  ~ @email      support@teamontherun.com
+  ~
+  ~ 	© Copyright 2019 StreamWIDE UK Ltd (Team on the Run). StreamWIDE is the copyright holder
+  ~ 	of all code contained in this file. Do not redistribute or
+  ~  	re-use without permission.
+  ~
+  ~ @lastModifiedOn lun., 30 déc. 2019 14:10:43 +0100
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#112250"
+            android:textSize="16sp"
+            android:text="Lone Worker States"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#112250"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/demo_lone_worker_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Lone Worker Protection"
+                android:textOff="OFF"
+                android:textOn="ON"
+                app:showText="false"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#112250"
+                    android:textSize="16sp"
+                    android:text="Lone worker "/>
+
+                <TextView
+                    android:id="@+id/demo_lone_worker_lw_state"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:textColor="#00897b"
+                    android:textSize="16sp"
+                    android:text="Disallowed"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:text="Man down"
+                    android:textColor="#112250"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/demo_lone_worker_md_state_enabled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:textColor="#e53935"
+                    android:layout_marginEnd="50dp"
+                    android:textSize="16sp"
+                    android:text="OFF"/>
+
+                <TextView
+                    android:id="@+id/demo_lone_worker_md_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:textColor="#e53935"
+                    android:textSize="16sp"
+                    android:text="Disallowed"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:text="Positive security"
+                    android:textColor="#112250"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/demo_lone_worker_ps_state"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:textColor="#00897b"
+                    android:textSize="16sp"
+                    android:text="Allowed"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/demo_lone_worker_activity_btn_re_calibrate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:textColor="#112250"
+                app:backgroundTint="#fff"
+                android:text="Re-calibrate"/>
+
+                <androidx.core.widget.ContentLoadingProgressBar
+                    android:id="@+id/demo_lone_worker_activity_calibrate_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:indeterminateOnly="true"
+                    android:visibility="visible"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/demo_lone_worker_activity_detected_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginTop="20dp"
+            android:background="#ef6c00"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFF"
+                android:textSize="16sp"
+                android:text="Man down detected !!"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FFF"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:weightSum="1"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/demo_lone_worker_activity_btn_stop_detected"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:layout_gravity="center"
+                    android:text="Stop Alert"
+                    android:textColor="#ef6c00"
+                    app:backgroundTint="#fff" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/demo_lone_worker_activity_received_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginTop="20dp"
+            android:background="#e53935"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFF"
+                android:textSize="16sp"
+                android:text="Received Man down Alert"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FFF"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/demo_lone_worker_activity_btn_ask_received"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:layout_gravity="center"
+                    android:text="acknowledge Alert"
+                    android:textColor="#e53935"
+                    app:backgroundTint="#fff" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/demo_lone_worker_activity_btn_stop_received"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:layout_gravity="center"
+                    android:text="Stop Alert"
+                    android:textColor="#e53935"
+                    app:backgroundTint="#fff" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:layout_marginEnd="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Log"
+                    android:textColor="#112250"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#112250" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/demo_lone_worker_activity_btn_clear_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:textColor="#112250"
+                app:backgroundTint="#fff"
+                android:text="Clear"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/demo_lone_worker_activity_log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#112250"
+            android:textSize="14sp"
+            android:scrollbars = "vertical"
+            android:gravity="bottom"
+            android:text="> Start Lone worker demo ........................"/>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#112250"/>
+
+</LinearLayout>

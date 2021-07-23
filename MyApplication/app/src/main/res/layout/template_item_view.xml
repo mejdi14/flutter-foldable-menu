@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~ 	StreamWIDE (Team on The Run)
+  ~
+  ~ @createdBy  AndroidTeam on ven., 10 avr. 2020 11:06:25 +0100
+  ~ @copyright  Copyright (c) 2020 StreamWIDE UK Ltd (Team on the Run)
+  ~ @email      support@teamontherun.com
+  ~
+  ~ 	© Copyright 2020 StreamWIDE UK Ltd (Team on the Run). StreamWIDE is the copyright holder
+  ~ 	of all code contained in this file. Do not redistribute or
+  ~  	re-use without permission.
+  ~
+  ~ @lastModifiedOn ven., 10 avr. 2020 11:06:17 +0100
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/template_item_row"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:padding="5dp"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/template_item_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/app_name"
+        android:background="@color/colorPrimary"/>
+
+    <TextView
+        android:id="@+id/template_item_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="5dp"
+        android:text="test" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/template_item_favorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@android:color/transparent"
+        app:srcCompat="@drawable/selector_fav" />
+
+</LinearLayout>

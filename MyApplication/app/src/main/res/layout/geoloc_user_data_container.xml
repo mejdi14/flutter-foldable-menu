@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~ 	StreamWIDE (Team on The Run)
+  ~
+  ~ @createdBy  AndroidTeam on Wed, 8 Jan 2020 15:56:50 +0100
+  ~ @copyright  Copyright (c) 2020 StreamWIDE UK Ltd (Team on the Run)
+  ~ @email      support@teamontherun.com
+  ~
+  ~ 	© Copyright 2020 StreamWIDE UK Ltd (Team on the Run). StreamWIDE is the copyright holder
+  ~ 	of all code contained in this file. Do not redistribute or
+  ~  	re-use without permission.
+  ~
+  ~ @lastModifiedOn Mon, 9 Dec 2019 15:40:30 +0100
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/phone_number_container">
+
+        <EditText
+            android:id="@+id/phone_number_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:hint="e.g. 33123456789,group:2, group:15"
+            android:layout_toStartOf="@id/remove_phone_number_button"
+            android:layout_centerVertical="true" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/remove_phone_number_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:visibility="gone"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/app_name"
+            app:srcCompat="@drawable/ic_action_trash"/>
+</RelativeLayout>

@@ -1,0 +1,24 @@
+<!--
+  ~
+  ~ 	StreamWIDE (Team on The Run)
+  ~
+  ~ @createdBy  AndroidTeam on Wed, 8 Jan 2020 16:21:05 +0100
+  ~ @copyright  Copyright (c) 2020 StreamWIDE UK Ltd (Team on the Run)
+  ~ @email      support@teamontherun.com
+  ~
+  ~ 	© Copyright 2020 StreamWIDE UK Ltd (Team on the Run). StreamWIDE is the copyright holder
+  ~ 	of all code contained in this file. Do not redistribute or
+  ~  	re-use without permission.
+  ~
+  ~ @lastModifiedOn Wed, 4 Dec 2019 17:17:53 +0100
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="45dp"
+    android:height="45dp"
+    android:viewportHeight="48.0"
+    android:viewportWidth="48.0">
+    <path
+        android:fillColor="@color/colorPrimary"
+        android:pathData="M24,1C12.6,1 3.4,10.1 3.4,21.3c0,4.2 1.3,8.3 3.8,11.7c2.4,3.4 5.8,5.9 9.7,7.3c1.2,0.4 2.3,1.9 3.5,3.4c1.2,1.6 2.6,3.3 3.7,3.3c1,0 2.4,-1.8 3.4,-3.2c1.1,-1.5 2.2,-2.9 3.4,-3.3C39,37.7 44.6,30 44.6,21.3C44.6,10.1 35.4,1 24,1z" />
+</vector>

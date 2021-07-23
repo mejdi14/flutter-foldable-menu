@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~ 	StreamWIDE (Team on The Run)
+  ~
+  ~ @createdBy  AndroidTeam on ven., 27 déc. 2019 11:04:09 +0100
+  ~ @copyright  Copyright (c) 2019 StreamWIDE UK Ltd (Team on the Run)
+  ~ @email      support@teamontherun.com
+  ~
+  ~ 	© Copyright 2019 StreamWIDE UK Ltd (Team on the Run). StreamWIDE is the copyright holder
+  ~ 	of all code contained in this file. Do not redistribute or
+  ~  	re-use without permission.
+  ~
+  ~ @lastModifiedOn jeu., 26 déc. 2019 15:10:49 +0100
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/contact_item_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:layout_centerVertical="true"
+    android:layout_marginBottom="3dp"
+    android:layout_marginTop="3dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="50dp"
+            android:layout_height="50dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/item_contact_avatar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:background="#f1f1f1"/>
+            <View
+                android:contentDescription="@null"
+                android:id="@+id/item_contact_availability"
+                android:layout_width="4dp"
+                android:layout_height="4dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dip"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/item_contact_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingEnd="20dp"
+                android:paddingStart="0dp"/>
+
+            <TextView
+                android:id="@+id/item_contact_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingStart="0dp"
+                android:paddingEnd="20dp"/>
+
+            <TextView
+                android:id="@+id/item_contact_operational_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingStart="0dp"
+                android:paddingEnd="20dp"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+</LinearLayout>

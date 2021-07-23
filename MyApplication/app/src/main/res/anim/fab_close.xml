@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~ 	StreamWIDE (Team on The Run)
+  ~
+  ~ @createdBy  AndroidTeam on lun., 30 déc. 2019 10:29:13 +0100
+  ~ @copyright  Copyright (c) 2019 StreamWIDE UK Ltd (Team on the Run)
+  ~ @email      support@teamontherun.com
+  ~
+  ~ 	© Copyright 2019 StreamWIDE UK Ltd (Team on the Run). StreamWIDE is the copyright holder
+  ~ 	of all code contained in this file. Do not redistribute or
+  ~  	re-use without permission.
+  ~
+  ~ @lastModifiedOn lun., 30 déc. 2019 10:28:42 +0100
+  -->
+
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="true">
+
+
+    <scale
+        android:duration = "300"
+        android:fromXScale="0.8"
+        android:fromYScale="0.8"
+        android:toXScale="0.0"
+        android:toYScale="0.0"
+        android:interpolator="@android:anim/linear_interpolator"
+        android:pivotX="50%"
+        android:pivotY="50%">
+    </scale>
+
+    <alpha
+        android:fromAlpha="1.0"
+        android:toAlpha="0.0"
+        android:duration="300"
+        android:interpolator="@android:anim/accelerate_interpolator">
+    </alpha>
+
+
+</set>

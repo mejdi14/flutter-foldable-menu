@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~ 	StreamWIDE (Team on The Run)
+  ~
+  ~ @createdBy  AndroidTeam on Fri, 10 Jan 2020 16:59:24 +0100
+  ~ @copyright  Copyright (c) 2020 StreamWIDE UK Ltd (Team on the Run)
+  ~ @email      support@teamontherun.com
+  ~
+  ~ 	© Copyright 2020 StreamWIDE UK Ltd (Team on the Run). StreamWIDE is the copyright holder
+  ~ 	of all code contained in this file. Do not redistribute or
+  ~  	re-use without permission.
+  ~
+  ~ @lastModifiedOn Fri, 10 Jan 2020 16:52:59 +0100
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.MainActivity">
+
+
+    <Button
+        android:id="@+id/connection_state"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorAccent"
+        android:text="Connection state" />
+
+
+    <Button
+        android:id="@+id/action_account_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/connection_state"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/action_account"/>
+
+    <Button
+        android:id="@+id/action_contacts_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/action_account_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="@string/action_contacts" />
+
+    <Button
+        android:id="@+id/action_messaging_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/action_contacts_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="@string/action_messaging" />
+
+    <Button
+        android:id="@+id/action_voip_calls_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/action_messaging_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="@string/action_voip_calls"/>
+
+    <Button
+        android:id="@+id/action_emergency_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/action_voip_calls_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="@string/action_emergency"/>
+
+    <Button
+        android:id="@+id/action_lone_worker_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/action_emergency_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="@string/action_lone_worker"/>
+
+    <Button
+        android:id="@+id/action_geolocation_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/action_lone_worker_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="@string/action_geolocation"/>
+
+    <Button
+        android:id="@+id/action_my_business_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/action_geolocation_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="@string/action_my_business"/>
+
+</RelativeLayout>

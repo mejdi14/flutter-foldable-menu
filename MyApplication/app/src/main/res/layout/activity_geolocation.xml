@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~ 	StreamWIDE (Team on The Run)
+  ~
+  ~ @createdBy  AndroidTeam on Thu, 5 Dec 2019 16:36:35 +0100
+  ~ @copyright  Copyright (c) 2019 StreamWIDE UK Ltd (Team on the Run)
+  ~ @email      support@teamontherun.com
+  ~
+  ~ 	© Copyright 2019 StreamWIDE UK Ltd (Team on the Run). StreamWIDE is the copyright holder
+  ~ 	of all code contained in this file. Do not redistribute or
+  ~  	re-use without permission.
+  ~
+  ~ @lastModifiedOn Thu, 5 Dec 2019 16:36:35 +0100
+  -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        tools:context=".ui.geoloc_demo.ui.DemoGeolocMainActivity">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:text="Start tracking my location"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start Tracking"
+                android:id="@+id/start_tracking_button"
+                android:textAllCaps="false"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tracking_status_text_view"
+                android:layout_marginStart="20dp"
+                android:visibility="gone"
+                android:drawableStart="@drawable/tracking_location_started"
+                android:textSize="12dp"
+                android:textColor="@android:color/darker_gray"
+
+                android:text="Tracking is started"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/geoloc_error_text_view"
+            android:layout_marginStart="16dp"
+            android:visibility="gone"
+            android:textSize="14dp"
+            android:textColor="@android:color/holo_red_dark" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="start"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:text="Start tracking other user's location"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/container"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/phone_number_container">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:text="Add users' phone numbers that you can track"
+                    android:layout_toStartOf="@id/add_phone_number_button"
+                    android:layout_centerVertical="true" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/add_phone_number_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    android:contentDescription="@string/app_name"
+                    app:srcCompat="@drawable/add_contact"/>
+            </RelativeLayout>
+
+            <include layout="@layout/geoloc_user_data_container"></include>
+        </LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/track_users_button"
+            android:text="Start tracking users"
+            android:textAllCaps="false"
+            android:layout_marginTop="16dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tracking_error_text_view"
+            android:layout_marginStart="16dp"
+            android:visibility="gone"
+            android:textSize="14dp"
+            android:textColor="@android:color/holo_red_dark" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="start"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:text="Search for places by keyword"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/search_for_places_button"
+            android:textAllCaps="false"
+            android:text="Search for an address"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="start"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:text="Get detailed place information by position"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/get_place_info_button"
+            android:textAllCaps="false"
+            android:layout_marginBottom="20dp"
+            android:text="Go to map view"/>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~ 	StreamWIDE (Team on The Run)
+  ~
+  ~ @createdBy  AndroidTeam on Fri, 6 Dec 2019 14:31:46 +0100
+  ~ @copyright  Copyright (c) 2019 StreamWIDE UK Ltd (Team on the Run)
+  ~ @email      support@teamontherun.com
+  ~
+  ~ 	© Copyright 2019 StreamWIDE UK Ltd (Team on the Run). StreamWIDE is the copyright holder
+  ~ 	of all code contained in this file. Do not redistribute or
+  ~  	re-use without permission.
+  ~
+  ~ @lastModifiedOn Fri, 6 Dec 2019 14:31:42 +0100
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <fragment
+        android:id="@+id/map_fragment"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"/>
+
+    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+        android:id="@+id/autocomplete_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="16dp"
+        android:padding="10dp"
+        android:drawableEnd="@drawable/ic_action_search_map"
+        android:hint="Search for an address"
+        android:background="#fff"
+        android:imeOptions="actionSearch" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/pin_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:padding="10dp"
+        android:contentDescription="@string/app_name"
+        android:visibility="gone"
+        app:srcCompat="@drawable/ic_geolocation_pin"/>
+
+</RelativeLayout>

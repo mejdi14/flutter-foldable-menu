@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~ 	StreamWIDE (Team on The Run)
+  ~
+  ~ @createdBy  AndroidTeam on lun., 30 déc. 2019 18:24:59 +0100
+  ~ @copyright  Copyright (c) 2019 StreamWIDE UK Ltd (Team on the Run)
+  ~ @email      support@teamontherun.com
+  ~
+  ~ 	© Copyright 2019 StreamWIDE UK Ltd (Team on the Run). StreamWIDE is the copyright holder
+  ~ 	of all code contained in this file. Do not redistribute or
+  ~  	re-use without permission.
+  ~
+  ~ @lastModifiedOn lun., 30 déc. 2019 09:06:45 +0100
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.MainActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/activity_account_company_logo_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/company_logo_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:text="Company Logo"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/company_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/company_logo_text"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/logout_button"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:text="Logout"
+
+        />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/user_information"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/activity_account_company_logo_layout"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="Phone Number"
+                    android:textColor="#112250" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#f1f1f1" />
+
+                <TextView
+                    android:id="@+id/activity_account_phone_number_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    android:maxLines="3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="User Name"
+                    android:textColor="#112250" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#f1f1f1" />
+
+                <TextView
+                    android:id="@+id/activity_account_user_name_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    android:maxLines="3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="Status"
+                    android:textColor="#112250" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#f1f1f1" />
+
+                <TextView
+                    android:id="@+id/activity_account_status_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    android:maxLines="3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/activity_account_oper_status_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="Operational Status"
+                    android:textColor="#112250" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#f1f1f1" />
+
+                <TextView
+                    android:id="@+id/activity_account_oper_status_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    android:maxLines="3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/activity_account_role_icon_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="Icon per role"
+                    android:textColor="#112250" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:background="#f1f1f1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/activity_account_role_icon_picture"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:paddingTop="0dp"
+                        android:paddingBottom="1dp"
+                        android:paddingStart="1dp"
+                        android:paddingEnd="1dp"
+                        android:background="#f1f1f1"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/activity_account_role_icon_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:ellipsize="end"
+                        android:gravity="start"
+                        android:maxLines="3" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="130dp"
+                android:layout_height="130dp">
+
+                <ImageView
+                    android:id="@+id/user_picture"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/ic_profile_picture" />
+                <ProgressBar
+                    android:id="@+id/user_picture_progress"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:visibility="gone"
+                    android:layout_centerInParent="true"/>
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/user_availability"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="User availability" />
+
+            <Button
+                android:id="@+id/user_operational_status_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorPrimary"
+                android:text="operational status" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

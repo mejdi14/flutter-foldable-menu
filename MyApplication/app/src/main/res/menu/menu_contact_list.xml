@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~ 	StreamWIDE (Team on The Run)
+  ~
+  ~ @createdBy  AndroidTeam on ven., 27 déc. 2019 17:38:18 +0100
+  ~ @copyright  Copyright (c) 2019 StreamWIDE UK Ltd (Team on the Run)
+  ~ @email      support@teamontherun.com
+  ~
+  ~ 	© Copyright 2019 StreamWIDE UK Ltd (Team on the Run). StreamWIDE is the copyright holder
+  ~ 	of all code contained in this file. Do not redistribute or
+  ~  	re-use without permission.
+  ~
+  ~ @lastModifiedOn jeu., 26 déc. 2019 15:10:53 +0100
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_business_contacts"
+        android:title="Business Contacts"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_smartms_contacts"
+        android:title="SmartMS Contacts"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_local_contacts"
+        android:title="Local contacts"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_sort_contacts"
+        android:title="Display name order"
+        app:showAsAction="never"/>
+
+</menu>
