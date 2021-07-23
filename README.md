@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-<img src="https://github.com/mejdi14/flutter-foldable-menu/blob/master/images/foldable_menu.png" height="300" width="300" >
+<img src="https://raw.githubusercontent.com/mejdi14/flutter-foldable-menu/blob/master/images/foldable_menu.png" height="300" width="300" >
 	</p>
 	
 ## :art:Credits
