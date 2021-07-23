@@ -1,3 +1,3 @@
-## 1.0.2
+## 1.0.3
 
-* provide a code example on how to use the package.
+* provide a new demo for the package.
