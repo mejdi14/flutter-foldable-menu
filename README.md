@@ -25,7 +25,9 @@
 	
 	
 ## How to use
-```List<FoldableCell> myCards = [
+```
+//create your menu items
+List<FoldableCell> myCards = [
     FoldableCell(color: Colors.yellow, label: 'close', icon: Icon(Icons.close)),
     FoldableCell(
         color: Colors.orange,
@@ -44,6 +46,7 @@
     FoldableCell(color: Colors.red, label: 'profile', icon: Icon(Icons.person))
   ];
   
+  // show your menu
    Navigator.of(context).push(PageRouteBuilder(
                               opaque: false,
                               pageBuilder: (BuildContext context, _, __) =>
