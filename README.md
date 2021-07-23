@@ -25,7 +25,7 @@
 	
 	
 ## How to use
-List<FoldableCell> myCards = [
+```List<FoldableCell> myCards = [
     FoldableCell(color: Colors.yellow, label: 'close', icon: Icon(Icons.close)),
     FoldableCell(
         color: Colors.orange,
@@ -58,6 +58,7 @@ List<FoldableCell> myCards = [
                                       print('this is :$cell');
                                     },
                                   )));
+				  ```
 	
 ## 🤝 Contributing
 
