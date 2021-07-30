@@ -1,5 +1,7 @@
 library flutter_foldable_menu;
 
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
@@ -28,9 +30,10 @@ class FoldableMenu extends StatefulWidget {
 
 class _FoldableMenuState extends State<FoldableMenu>
     with SingleTickerProviderStateMixin {
+  late StreamController<List<Widget>> _streamList;
   late AnimationController _animationController;
   bool isClicked = false;
-  var rotationX = math.pi;
+  final ValueNotifier<double> rotationX = ValueNotifier<double>(math.pi);
 
   List<Widget> cardsList = [];
   late Animation sizeAnimation;
@@ -43,6 +46,7 @@ class _FoldableMenuState extends State<FoldableMenu>
   void initState() {
     super.initState();
     widget.myCards = widget.myCards.reversed.toList();
+    _streamList = StreamController<List<Widget>>();
     _animationController = AnimationController(
         vsync: this, duration: widget.duration ?? Duration(seconds: 2));
 
@@ -74,7 +78,7 @@ class _FoldableMenuState extends State<FoldableMenu>
     if (_animationController.value <= (1 / widget.myCards.length)) {
       widget.myCards[widget.myCards.length - 1].isVisible = true;
       widget.myCards[widget.myCards.length - 1].textOpacity = 1;
-      rotationX = sizeAnimation.value;
+      rotationX.value = sizeAnimation.value;
     }
     for (var i = 1; i < widget.myCards.length - 1; i++) {
       if (_animationController.value > (i / widget.myCards.length) &&
@@ -95,7 +99,7 @@ class _FoldableMenuState extends State<FoldableMenu>
       widget.myCards[0].textOpacity = 1;
       widget.myCards[0].rotationX = sizeAnimation.value;
     }
-    setState(() {});
+    createListItems();
   }
 
   @override
@@ -104,34 +108,45 @@ class _FoldableMenuState extends State<FoldableMenu>
         backgroundColor:
             Colors.white.withOpacity(widget.backgroundOpacity ?? 0.85),
         body: SafeArea(
-          top: true,
-          child: GestureDetector(
+            top: true,
+            child: GestureDetector(
               behavior: HitTestBehavior.opaque,
               onTap: () {
                 _animationController.reverse();
               },
               child: Align(
-                alignment: widget.side.index == MenuSide.left.index
-                    ? Alignment.centerLeft
-                    : Alignment.centerRight,
-                child: Container(
-                  height: MediaQuery.of(context).size.height,
-                  child: Transform(
-                    transform: Matrix4.identity()
-                      ..setEntry(2, 2, -0.001)
-                      ..rotateY(rotationX)
-                      ..right
-                      ..dimension,
-                    alignment: widget.side.index == MenuSide.left.index
-                        ? Alignment.centerLeft
-                        : Alignment.centerRight,
-                    child: Stack(
-                      children: [...createListItems()],
-                    ),
-                  ),
-                ),
-              )),
-        ));
+                  alignment: widget.side.index == MenuSide.left.index
+                      ? Alignment.centerLeft
+                      : Alignment.centerRight,
+                  child: Container(
+                    height: MediaQuery.of(context).size.height,
+                    child: ValueListenableBuilder<double>(
+                        valueListenable: rotationX,
+                        builder: (BuildContext context, double value,
+                            Widget? child) {
+                          return (Transform(
+                            transform: Matrix4.identity()
+                              ..setEntry(2, 2, -0.001)
+                              ..rotateY(rotationX.value)
+                              ..right
+                              ..dimension,
+                            alignment: widget.side.index == MenuSide.left.index
+                                ? Alignment.centerLeft
+                                : Alignment.centerRight,
+                            child: StreamBuilder(
+                              stream: _streamList.stream,
+                              builder: (context, AsyncSnapshot<List<Widget>>? snapshot) {
+                                return Stack(
+                                  children: [...((snapshot != null && snapshot.data != null)
+                                    ? ((snapshot.data?.isNotEmpty ?? false)
+                                    ? (snapshot.data) : []) : [])!],
+                                );
+                              }
+                            ),
+                          ));
+                        }),
+                  )),
+            )));
   }
 
   createListItems() {
@@ -195,7 +210,7 @@ class _FoldableMenuState extends State<FoldableMenu>
       counter--;
       print(cell.toString());
     }
-    return cardsList;
+    _streamList.sink.add(cardsList);
   }
 
   bool isItOnTheRightSide() => widget.side.index == MenuSide.right.index;
