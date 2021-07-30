@@ -49,7 +49,6 @@ class _FoldableMenuState extends State<FoldableMenu>
     _streamList = StreamController<List<Widget>>();
     _animationController = AnimationController(
         vsync: this, duration: widget.duration ?? Duration(seconds: 2));
-
     createListItems();
     WidgetsBinding.instance!.addPostFrameCallback((_) {
       afterBuild();
@@ -77,7 +76,7 @@ class _FoldableMenuState extends State<FoldableMenu>
   void animationEngine() {
     if (_animationController.value <= (1 / widget.myCards.length)) {
       widget.myCards[widget.myCards.length - 1].isVisible = true;
-      widget.myCards[widget.myCards.length - 1].textOpacity = 1;
+      widget.myCards[widget.myCards.length - 1].textOpacity = 1.0;
       rotationX.value = sizeAnimation.value;
     }
     for (var i = 1; i < widget.myCards.length - 1; i++) {
@@ -90,13 +89,16 @@ class _FoldableMenuState extends State<FoldableMenu>
         widget.myCards[((widget.myCards.length - 2) - i)].isVisible = false;
         widget.myCards[((widget.myCards.length - 1) - i)].rotationX =
             sizeAnimation.value;
+        if(i > 1)
+        widget.myCards[((widget.myCards.length) - i)].rotationX = math.pi;
         widget.myCards[((widget.myCards.length - 1) - i)].textOpacity =
             sizeAnimation.value / math.pi;
       }
     }
     if (_animationController.value > (1 - (1 / widget.myCards.length))) {
+      widget.myCards[1].rotationX = math.pi;
       widget.myCards[0].isVisible = true;
-      widget.myCards[0].textOpacity = 1;
+      widget.myCards[0].textOpacity = 1.0;
       widget.myCards[0].rotationX = sizeAnimation.value;
     }
     createListItems();
@@ -208,7 +210,6 @@ class _FoldableMenuState extends State<FoldableMenu>
         ),
       ));
       counter--;
-      print(cell.toString());
     }
     _streamList.sink.add(cardsList);
   }
@@ -263,6 +264,8 @@ class _FoldableMenuState extends State<FoldableMenu>
   void dispose() {
     // TODO: implement dispose
     _animationController.dispose();
+    _streamList.close();
+    rotationX.dispose();
     super.dispose();
   }
 
