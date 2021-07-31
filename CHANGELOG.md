@@ -9,3 +9,7 @@
 ## 1.0.5
 
 * boosting performance using streams and value notifier.
+
+## 1.0.6
+
+* fix the gap between the times and boost performance a bit more.
